@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :movies
+  resources :users
+  root to: redirect("movies")
+  get "/auth/:provider/callback" => "sessions#create"
+  get "/signout" => "sessions#destroy", as: :signout
+  get "/signin" => "users#new", as: :signin
+  get "/upvote/:id" => "movies#upvote", as: :upvote
+  get "/downvote/:id" => "movies#downvote", as: :downvote
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
