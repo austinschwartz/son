@@ -1,0 +1,22 @@
+%h1 Listing movies
+
+%table
+  %div
+    - @movies.sort{|a,b| (b.upvotes - b.downvotes) <=> (a.upvotes - a.downvotes)}.each do |movie|
+      .row
+        .col-md-2.votes
+          .arrows
+            %span= ((movie.upvotes) - (movie.downvotes))
+            .left
+              %a{href: "/upvote/#{movie.id}"}
+                %span{class: ('active up' if @user_upvoted.include? movie.id)} up
+            .right
+              %a{href: "/downvote/#{movie.id}"}
+                %span{class: ('active down' if @user_downvoted.include? movie.id)} down
+        .col-md-8
+          %h2= movie.title
+          %p= movie.plot_summary
+          -#%button{class: 'btn btn-default'}= link_to 'Destroy', movie, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        .col-md-2
+          %a{href: "http://www.imdb.com/title/tt#{movie.imdb_id}"}
+            %img{src: "#{movie.poster}", class: "poster"}

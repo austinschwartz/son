@@ -1,0 +1,10 @@
+- if current_user
+  = "Welcome #{current_user.name}"
+  = link_to "Sign out", "/signout"
+- else
+  %p
+    %a{class: "btn btn-block btn-social btn-facebook", href: "/auth/facebook"}
+      %i{class: "fa fa-facebook"} Sign in with Facebook
+  %p
+    %a{class: "btn btn-block btn-social btn-github", href: "/auth/github"}
+      %i{class: "fa fa-github"} Sign in with Github
