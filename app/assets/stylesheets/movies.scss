@@ -1,0 +1,27 @@
+img.poster {
+  width: 100px;
+}
+.votes {
+  font-size: 24px;
+  padding: 25px;
+}
+.arrows {
+  position: block;
+}
+.arrows.left {
+  float: left;
+  background-color: yellow;
+}
+.arrows.right {
+  float: right;
+  background-color: blue;
+}
+.active {
+  font-weight: bold;
+  .up {
+    color: orange;
+  }
+  .down {
+    color: purple;
+  }
+}
