@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vote_type: 1
+  user_id: 
+  movie_id: 
+
+two:
+  vote_type: 1
+  user_id: 
+  movie_id: 
